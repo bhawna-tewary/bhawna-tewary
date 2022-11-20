@@ -1,0 +1,105 @@
+
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+class Special
+{
+    char ch;
+
+public:
+    void solve()
+    {
+        ofstream dest("copy.txt");
+        ifstream src("original.txt");
+        char ch;
+        if (src && dest)
+        {
+            while (src.get(ch))
+            {
+                if (ch == '@' || ch == '&' || ch == '#')
+                    dest << ch << " ";
+            }
+
+            cout << "Copied Successfully \n";
+        }
+        else
+        {
+            cout << "Error! Not able to read file.";
+        }
+        dest.close();
+        src.close();
+    }
+};
+class student 
+{
+    int rno;
+    char name[10];
+    double fee;
+ 
+public:
+    student()
+    {
+        cout << "Enter the RollNo:";
+        cin >> rno;
+        cout << "Enter the Name:";
+        cin >> name;
+        cout << "Enter the Fee:";
+        cin >> fee;
+    }
+ 
+    void display()
+    {
+        cout << endl << rno << "\t" << name << "\t" << fee;
+    }
+};
+
+template <typename T>
+
+T sum(T const &a, T const &b)
+{
+    return a + b;
+}
+template <>
+
+int sum(int const &a, int const &b) 
+{
+    return a + b;
+}
+ class Account 
+ {  
+   public:  
+   float salary = 889899;   
+ };  
+   class Programmer: public Account 
+   {  
+   public:  
+   float bonus = 98822;    
+   };   
+
+int main()
+{
+    Special ob;
+    ob.solve();
+  
+  
+    int i = 9;
+    int j = 2;
+    cout << "Sum (Integer) : " << sum(i, j) << endl;
+
+    double f1 = 5.5;
+    double f2 = 2.7;
+    cout << "Sum (Float) : " << sum(f1, f2) << endl;
+
+      student x ; 
+      x.display();
+      
+    Programmer p1;  
+     cout<<"Salary: "<<p1.salary<<endl;    
+     cout<<"Bonus: "<<p1.bonus<<endl;    
+    return 0;  
+ 
+    
+    return 0;
+  
+}
